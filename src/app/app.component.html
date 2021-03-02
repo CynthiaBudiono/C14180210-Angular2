@@ -1,4 +1,35 @@
 <hello name="{{ name }}"></hello>
 <p>
-  Start editing to see some magic happen :)
+	All your notes :D
 </p>
+<div>
+
+	<button (click)="tambah()" style="margin:10px; padding:8px; background-color:#3398FF; border:none; color:white; border-radius:50px;">+</button>
+
+	<button (click)="godet()" style="margin:10px; padding:8px; background-color:orange; border:none; color:white; border-radius:50px;">Detail Note</button>
+
+	<button (click)="gofav()" style="margin:10px; padding:8px; background-color:pink; border:none; color:white; border-radius:50px;">Favourite</button>
+
+	<router-outlet></router-outlet>
+	<div>
+		{{notes}}
+	</div>
+
+	<ng-template *ngIf="btnklik; then templatenambah"></ng-template>
+	<ng-template #templatenambah>
+		<h4 style="margin-bottom:0;">Judul</h4>
+		<input type="text" [(ngModel)]="txtjudul" placeholder="Resolusi 2021">
+
+		<button (click)="save()" style="margin:10px; padding:8px; background-color:#3398FF; border:none; color:white; border-radius:50px;">Save</button>
+
+		<button (click)="cancel()" style="margin:10px; padding:8px; background-color:red; border:none; color:white; border-radius:50px;">Cancel</button>
+
+		<h4 style="margin-bottom:0;">Isi</h4>
+		<textarea [(ngModel)]="txtisi" placeholder="bisa masak kue"></textarea>
+
+		<h4 style="margin-bottom:0;">Date</h4>
+		<input type="date" [(ngModel)]="txtdate">
+	</ng-template>
+
+
+</div>
