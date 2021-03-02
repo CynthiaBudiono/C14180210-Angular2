@@ -13,14 +13,16 @@ export class AppComponent  {
     this.notes = this.globalvar.getnotes();
   }
   // notes: any[][] = [];
+  index =0;
   notes;
   txtjudul:String;
   txtisi:String;
-  txtdate:Date;
+  txtdate:Date = new Date();
   btnklik=false;
   name = 'User';
   lnotes=0;
 
+  notesfav: any[][] = [];
   godet(){
     this.router.navigate(["/detailnote/"]);
   }
@@ -29,7 +31,7 @@ export class AppComponent  {
     this.router.navigate(["/favourite/"]);
   }
   tambah(){
-    this.btnklik=true;
+    this.btnklik=!this.btnklik;
   }
 
   save(){
@@ -47,6 +49,7 @@ export class AppComponent  {
     }
     
     this.router.navigate(["/detailnote/"]);
+    this.btnklik=false;
   }
 
   cancel(){
@@ -54,5 +57,9 @@ export class AppComponent  {
     this.txtjudul="";
     this.txtisi="";
     // this.txtdate=Date();
+  }
+
+  makefav(a){
+    this.notesfav[a];
   }
 }

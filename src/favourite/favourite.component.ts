@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { GlobalnoteService } from '../app/globalnote.service';
 
 @Component({
   selector: 'app-favourite',
@@ -7,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavouriteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, public globalvar : GlobalnoteService){
+    this.notes = this.globalvar.getnotes();
+  }
 
+  notes;
   ngOnInit() {
   }
 

@@ -11,8 +11,15 @@
 	<button (click)="gofav()" style="margin:10px; padding:8px; background-color:pink; border:none; color:white; border-radius:50px;">Favourite</button>
 
 	<router-outlet></router-outlet>
-	<div>
-		{{notes}}
+	<div *ngFor="let a of notes">
+		<!-- note {{i+1}} br {{a+1}} -->
+		note {{a}}
+		<button (click)="makefav(a)" style="margin:5px; padding:5px; background-color:#ce897b; border:none; color:white; border-radius:50px;">*</button>
+		<br>
+		<!-- <div *ngFor="let b of a;">
+	  	{{b[0]}} + {{b[1]}} + {{b[2]}}
+      {{b}}
+    </div> -->
 	</div>
 
 	<ng-template *ngIf="btnklik; then templatenambah"></ng-template>
