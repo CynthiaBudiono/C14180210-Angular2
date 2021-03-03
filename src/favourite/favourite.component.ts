@@ -10,10 +10,10 @@ import { GlobalnoteService } from '../app/globalnote.service';
 export class FavouriteComponent implements OnInit {
 
   constructor(private router: Router, public globalvar : GlobalnoteService){
-    this.notes = this.globalvar.getnotes();
+    this.notesf = this.globalvar.getfav();
   }
 
-  notes;
+  notesf;
   ngOnInit() {
   }
 
