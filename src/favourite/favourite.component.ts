@@ -10,34 +10,34 @@ import { GlobalnoteService } from '../app/globalnote.service';
 export class FavouriteComponent implements OnInit {
 
   constructor(private router: Router, public globalvar : GlobalnoteService){
-    this.catatan= this.globalvar.getnotes();
-    for(var i = 0; i> this.catatan.length; i++){
-      if(this.catatan[i][3] == 1){
-        this.notesf = this.catatan[i];
+    // this.catatan= this.globalvar.getnotes();
+    // alert(this.catatan.length);
+    for(var i = 0; i <  this.globalvar.getnotes().length; i++){
+      if( this.globalvar.getnotes()[i][3] == 1){
+        this.notesf.push(this.globalvar.getnotes()[i]);
+        // alert(this.notesf);
       }
     }
   }
   nomor = -1;
-  catatan;
-  notesf;
+  a=1;
+  // catatan;
+  notesf: any[] =[];
   ngOnInit() {
     
   }
-
+  favourite(){
+    
+  }
   godet(a) {
     this.nomor = a;
     this.router.navigate(["/detailnote/" + this.nomor]);
   }
 
   makefav(a) {
-    alert("aaaaa : "+a);
-    if (this.notesf[a][3] == 0) {
-      this.notesf[a][3] = 1;
-      this.globalvar.arrayn[a][3] = 1;
-    } else {
-      this.notesf[a][3] = 0;
-      this.globalvar.arrayn[a][3] = 0;
-    }
+    // alert("aaaaa : "+a);
+    this.notesf[a][3] = 0;
+    this.globalvar.arrayn[a][3] = 0;
+    this.notesf.splice(a,1);
   }
-
 }

@@ -43,25 +43,20 @@ export class AddnoteComponent implements OnInit {
   // }
 
   save() {
-    if (this.txtjudul == "") {
-      alert("isi judul");
-    } else if (this.txtisi == "") {
-      alert("isi content");
-    }
-    else if(this.txtdate ==null){
-      alert("isi tanggal");
+    if (this.txtjudul == null || this.txtisi == null || this.txtdate == null) {
+      alert("tidak boleh ada yang kosong");
     }
     else {
       this.lnotes = this.notes.length;
       this.notes[this.lnotes] = Array(4);
-      alert(this.lnotes);
+      // alert(this.lnotes);
       this.notes[this.lnotes][0] = this.txtjudul;
       // alert(this.notes[this.lnotes][0]);
       this.notes[this.lnotes][1] = this.txtisi;
       this.notes[this.lnotes][2] = this.txtdate;
       this.notes[this.lnotes][3] = 0;
       this.globalvar.setnotes(this.notes);
-      alert("get NOTESSS : " + this.globalvar.getnotes());
+      // alert("get NOTESSS : " + this.globalvar.getnotes());
       for (var i = 0; i < this.lnotes; i++) {
         console.log(
           this.notes[i][0] + "-" + this.notes[i][1] + "-" + this.notes[i][2]

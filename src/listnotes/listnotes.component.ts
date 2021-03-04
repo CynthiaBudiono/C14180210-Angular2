@@ -23,7 +23,7 @@ export class ListnotesComponent implements OnInit {
   }
 
   makefav(a) {
-  alert("aaaaa : "+a);
+  // alert("aaaaa : "+a);
   if (this.notes[a][3] == 0) {
     this.notes[a][3] = 1;
     this.globalvar.arrayn[a][3] = 1;
