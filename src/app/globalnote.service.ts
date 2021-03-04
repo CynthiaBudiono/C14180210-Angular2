@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class GlobalnoteService {
   public arrayn: any[][] = [];
-  private arrayfav: any[][] = [];
+  // private arrayfav: any[][] = [];
 
   constructor() { }
 
@@ -15,11 +15,11 @@ export class GlobalnoteService {
     this.arrayn = arr;
   }
 
-  public getfav(){
-    return this.arrayfav;
-  }
+  // public getfav(){
+  //   return this.arrayfav;
+  // }
 
-  public setfav(arrf : any[][]){
-    this.arrayfav = arrf;
-  }
+  // public setfav(arrf : any[][]){
+  //   this.arrayfav = arrf;
+  // }
 }

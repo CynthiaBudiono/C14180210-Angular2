@@ -29,6 +29,6 @@ export class DetailnoteComponent implements OnInit {
 
   goback(){
     // this.router.navigate(["/app/"]);
-    this.router.navigate(["/"]);
+    this.router.navigate(["/listnotes/"]);
   }
 }

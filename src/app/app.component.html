@@ -1,49 +1,16 @@
 <hello name="{{ name }}"></hello>
 <p>
-	All your notes :D
+	:D
 </p>
 
 <div>
 
 	<button (click)="tambah()" style="margin:10px; padding:8px; background-color:#3398FF; border:none; color:white; border-radius:50px;">+</button>
 
-	<!-- <button (click)="godet()" style="margin:10px; padding:8px; background-color:orange; border:none; color:white; border-radius:50px;">Detail Note</button> -->
+	<button (click)="gonotes()" style="margin:10px; padding:8px; background-color:orange; border:none; color:white; border-radius:50px;">My Notes</button>
 
 	<button (click)="gofav()" style="margin:10px; padding:8px; background-color:pink; border:none; color:white; border-radius:50px;">Favourite</button>
 
 	<router-outlet></router-outlet>
-
-	<ng-template *ngIf="btnklik; then templatenambah"></ng-template>
-	<ng-template #templatenambah>
-		<h4 style="margin-bottom:0;">Judul</h4>
-		<input type="text" [(ngModel)]="txtjudul" placeholder="Resolusi 2021">
-
-		<button (click)="save()" style="margin:10px; padding:8px; background-color:#3398FF; border:none; color:white; border-radius:50px;">Save</button>
-
-		<button (click)="cancel()" style="margin:10px; padding:8px; background-color:red; border:none; color:white; border-radius:50px;">Cancel</button>
-
-		<h4 style="margin-bottom:0;">Isi</h4>
-		<textarea [(ngModel)]="txtisi" placeholder="bisa masak kue"></textarea>
-
-		<h4 style="margin-bottom:0;">Date</h4>
-		<input type="date" [(ngModel)]="txtdate">
-	</ng-template>
-
-		<div *ngFor="let a of notes; let i = index"
-			style="background-color:#00CCCC; margin-top:5px;">
-			<!-- note {{i+1}} br {{a+1}} -->
-			note {{i+1}}. <br>
-			<p>Judul : {{a[0]}}
-				<button (click)="godet(i)" style="margin:5px; padding:5px; background-color:#ce897b; border:none; color:white; border-radius:50px;">More</button>
-				<img *ngIf="a[3] == 0" (click)="makefav(i)" src="http://simpleicon.com/wp-content/uploads/star.png" style="width:30px; height:30px" alt="image">
-
-				<img *ngIf="a[3] == 1" (click)="makefav(i)" src="https://cdn.iconscout.com/icon/free/png-256/star-bookmark-favorite-shape-rank-16-28621.png" style="width:30px; height:30px" alt="image">
-
-			</p>
-
-				<p>Tanggal Created : {{a[2]}}</p>
-				<div style="overflow:scroll; width:100%">{{a[1]}}</div>
-		</div>
-
 
 </div>
