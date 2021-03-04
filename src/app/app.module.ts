@@ -11,7 +11,8 @@ import { GlobalnoteService } from './globalnote.service';
 
 const ROUTES : Routes = [
   {path : 'detailnote', component: DetailnoteComponent},
-  {path : 'favourite', component: FavouriteComponent}
+  {path : 'favourite', component: FavouriteComponent},
+  {path : 'detailnote/:nomor', component: DetailnoteComponent}
 ]
 
 @NgModule({

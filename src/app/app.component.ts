@@ -20,10 +20,12 @@ export class AppComponent {
   btnklik = false;
   name = "User";
   lnotes = 0;
+  nomor=-1;
 
   notesfav: any[][] = [];
-  godet() {
-    this.router.navigate(["/detailnote/"]);
+  godet(a) {
+    this.nomor = a;
+    this.router.navigate(["/detailnote/"+this.nomor]);
   }
 
   gofav() {
@@ -60,7 +62,7 @@ export class AppComponent {
         );
       }
 
-      this.router.navigate(["/detailnote/"]);
+      // this.router.navigate(["/detailnote/"]);
       this.btnklik = false;
     }
   }

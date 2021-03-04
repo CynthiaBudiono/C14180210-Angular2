@@ -2,13 +2,19 @@
 	detailnote works!
 </p>
 
-<div>{{notes}}</div>
+<button (click)="goback()" style="margin:10px; padding:8px; background-color:red; border:none; color:white; border-radius:50px;">back</button>
 
-<!-- <div *ngFor="let a of notes; let i = index" style="background-color:#00CCCC">
-	note {{i+1}}. <br>
-	<p>Judul : {{a[0]}}
-		<button (click)="makefav(a)" style="margin:5px; padding:5px; background-color:#ce897b; border:none; color:white; border-radius:50px;">*</button>
-	</p>
+<router-outlet></router-outlet>
+
+<div>
+    {{catatan}}
+    <h4>{{catatan[0]}}</h4>
+    <h4>{{catatan[2]}}</h4>
+    <p>{{catatan[1]}}</p>
+</div>
+
+<!-- <div *ngFor="let a of catatan; let i = index">
+	<p>Judul : {{a[0]}}	</p>
 
 	<p>Tanggal Created : {{a[2]}}</p>
 	{{a[1]}}
