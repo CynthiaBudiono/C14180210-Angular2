@@ -15,10 +15,17 @@ export class DetailnoteComponent implements OnInit {
   }
   catatan;
   isicatatan;
+  detailjudul;
+  isicat;
+  tglcreate;
   // notes;
   ngOnInit() {
-    this.isicatatan = this.route.snapshot.paramMap.get("nomor");
-    this.catatan = this.isicatatan;
+    var nomor = this.route.snapshot.paramMap.get("nomor");
+    this.detailjudul = this.globalvar.getnotes()[nomor][0]
+    this.isicatatan = this.globalvar.getnotes()[nomor][1]
+    this.tglcreate = this.globalvar.getnotes()[nomor][2]
+    // this.isicatatan = this.route.snapshot.paramMap.get("nomor");
+    // this.catatan = this.isicatatan;
   }
 
   goback(){

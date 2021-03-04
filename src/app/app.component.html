@@ -29,7 +29,7 @@
 		<input type="date" [(ngModel)]="txtdate">
 	</ng-template>
 
-		<div *ngFor="let a of notes; let i = index" (click)="godet(a)" style="background-color:#00CCCC; margin-top:5px;">
+		<div *ngFor="let a of notes; let i = index" (click)="godet(index)" style="background-color:#00CCCC; margin-top:5px;">
 			<!-- note {{i+1}} br {{a+1}} -->
 			note {{i+1}}. <br>
 			<p>Judul : {{a[0]}}
