@@ -20,12 +20,12 @@ export class AppComponent {
   btnklik = false;
   name = "User";
   lnotes = 0;
-  nomor=-1;
+  nomor = -1;
 
   notesfav: any[][] = [];
   godet(a) {
     this.nomor = a;
-    this.router.navigate(["/detailnote/"+this.nomor]);
+    this.router.navigate(["/detailnote/" + this.nomor]);
   }
 
   gofav() {
@@ -36,24 +36,23 @@ export class AppComponent {
   }
 
   save() {
-    if(this.txtjudul == ""){
+    if (this.txtjudul == "") {
       alert("isi judul");
-    }
-    else if(this.txtisi == ""){
+    } else if (this.txtisi == "") {
       alert("isi content");
     }
     // else if(this.txtdate !=date){
 
     // }
-    else{
-
+    else {
       this.lnotes = this.notes.length;
-      this.notes[this.lnotes] = Array(3);
+      this.notes[this.lnotes] = Array(4);
       alert(this.lnotes);
       this.notes[this.lnotes][0] = this.txtjudul;
       // alert(this.notes[this.lnotes][0]);
       this.notes[this.lnotes][1] = this.txtisi;
       this.notes[this.lnotes][2] = this.txtdate;
+      this.notes[this.lnotes][3] = 0;
       this.globalvar.setnotes(this.notes);
       alert("get NOTESSS : " + this.globalvar.getnotes());
       for (var i = 0; i < this.lnotes; i++) {
@@ -75,9 +74,13 @@ export class AppComponent {
   }
 
   makefav(a) {
-    alert(a);
-    // this.notesfav[a];
-    this.globalvar.setfav(this.notes[a]);
-
+    alert("aaaaa : "+a);
+    if (this.notes[a][3] == 0) {
+      this.notes[this.lnotes][3] = 1;
+      this.globalvar.arrayn[a][3] = 1;
+    } else {
+      this.notes[this.lnotes][3] = 0;
+      this.globalvar.arrayn[a][3] = 0;
+    }
   }
 }

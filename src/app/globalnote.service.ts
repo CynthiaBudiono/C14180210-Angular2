@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class GlobalnoteService {
-  private arrayn: any[][] = [];
+  public arrayn: any[][] = [];
   private arrayfav: any[][] = [];
 
   constructor() { }

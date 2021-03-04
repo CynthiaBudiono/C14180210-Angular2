@@ -16,7 +16,6 @@ export class DetailnoteComponent implements OnInit {
   catatan;
   isicatatan;
   detailjudul;
-  isicat;
   tglcreate;
   // notes;
   ngOnInit() {
