@@ -1,21 +1,22 @@
 <p>
-	My Favourite notes!
+  My Favourite notes!
 </p>
 
 <!-- <div>{{notesf}}</div> -->
 
-  <div *ngFor="let a of notesf; let i = index" style="background-color:#00CCCC; margin-top:8px; border-radius: 4px; padding:10px;">
+<div *ngFor="let a of notesf; let i = index"
+  style="background-color:#00CCCC; margin-top:8px; border-radius: 4px; padding:10px;">
 
-    note {{i+1}}
-    <img *ngIf="a[3] == 0" (click)="makefav(i)" src="http://simpleicon.com/wp-content/uploads/star.png" style="width:30px; height:30px; float: right;" alt="image">
+  note {{i+1}}
+  <img *ngIf="a[3] == 0" (click)="makefav(i)" src="http://simpleicon.com/wp-content/uploads/star.png" style="width:30px; height:30px; float: right;" alt="image">
 
-    <img *ngIf="a[3] == 1" (click)="makefav(i)" src="https://cdn.iconscout.com/icon/free/png-256/star-bookmark-favorite-shape-rank-16-28621.png" style="width:30px; height:30px; float: right;" alt="image">
-    
-    <h2 style="margin:0;">Judul : {{a[0]}}</h2>
-    
-    <button (click)="godet(i)" style="margin:5px; padding:5px; background-color:#ce897b; border:none; color:white; border-radius:50px; float: right;">More Detail</button>
-    
-    <p>Created Date: {{a[2]}}</p>
+  <img *ngIf="a[3] == 1" (click)="makefav(i)" src="https://cdn.iconscout.com/icon/free/png-256/star-bookmark-favorite-shape-rank-16-28621.png" style="width:30px; height:30px; float: right;" alt="image">
 
-      <!-- <div style="overflow:scroll; width:100%">{{a[1]}}</div> -->
-  </div>
+  <h2 style="margin:0;">Judul : {{a[0]}}</h2>
+
+  <button (click)="godet(getindex[i])" style="margin:5px; padding:5px; background-color:#ce897b; border:none; color:white; border-radius:50px; float: right;">More Detail</button>
+
+  <p>Created Date: {{a[2]}}</p>
+
+  <!-- <div style="overflow:scroll; width:100%">{{a[1]}}</div> -->
+</div>
